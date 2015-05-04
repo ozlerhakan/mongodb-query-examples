@@ -1,0 +1,88 @@
+== Query Examples
+
+This project is composed of 2 sub modules. These sub projects namely "java-driver-examples" and "spring-data-examples" work as 2 different ways in order to obtain the results of the specific queries with regard to a collection stored in MongoDB (mongod). While the first one uses only MongoDB Java Driver to retrieve the data, other one makes use of the Spring MongoDB approach for the same purpose.
+
+=== What's included:
+
+[source,xml]
+----
+mongodb-query-examples
+|--build.gradle
+|--gradle
+|  `--wrapper
+|     |--gradle-wrapper.jar
+|     `--gradle-wrapper.properties
+|--gradlew
+|--gradlew.bat
+|--java-driver-examples
+|  |--build.gradle
+|  `--src
+|     `--java
+|        `--com
+|           `--kodcu
+|              `--mongodb
+|                 `--driver
+|                    |--MongoApp.java
+|                    |--TweetDAO.java
+|                    `--TweetDAOImp.java
+|--settings.gradle
+`--spring-data-examples
+   |--build.gradle
+   `--src
+      `--java
+         `--com
+            `--kodcu
+               `--mongodb
+                  `--spring
+                     |--MongoApp.java
+                     |--MongoConfiguration.java
+                     |--TweetDAO.java
+                     |--TweetDAOImp.java
+                     `--twitter
+                        `--db
+                           |--Description.java
+                           |--Entity.java
+                           |--Media.java
+                           |--MediaProperty.java
+                           |--Size.java
+                           |--Tweet.java
+                           |--Url.java
+                           |--UrlProperty.java
+                           `--User.java
+----
+
+=== How to run
+
+. Suppose you have MongoDB installed on your machine, if not, just https://mongodb.org/[download] and install it.
+
+. https://github.com/ozlerhakan/mongodb-json-files[Download] the tweets collection that are used in each sub project. Use the following command line to restore it on your running server:
++
+    $ mongorestore dump
++
+If your mongod server runs on a different port, use `--port` command before dump. See the other details of http://docs.mongodb.org/manual/reference/program/mongorestore/#mongorestore[mongorestore]. This command should restore to a collection called "tweets" in a database called "twitter".
+
+. To check out the projects and build from sources, do the following:
+
+	git clone https://github.com/ozlerhakan/mongodb-query-examples
+	cd mongodb-query-examples
+	./gradlew build (--debug : to see comprehensive details)
+
+. Run the following command:
+
+	./gradlew run
++
+This command runs both "java-driver-examples" and "spring-data-examples" respectively. Note that, the database (`twitter`) is running on the local interface on port 27017.
+
+==== Using Eclipse
+
+To generate Eclipse metadata (.classpath and .project files), do the following:
+
+	./gradlew eclipse
+
+Once complete, it is ready to be imported into Eclipse IDE
+
+==== Using IntelliJ
+
+To generate IDEA metadata (.iml and .ipr files), do the following action:
+
+	./gradlew idea
