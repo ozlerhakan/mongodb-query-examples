@@ -1,0 +1,14 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'application'
+mainClassName = 'com.kodcu.mongodb.driver.MongoApp'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.mongodb:mongo-java-driver:3.0.0'
+}
