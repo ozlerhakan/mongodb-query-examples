@@ -8,11 +8,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * Created by Hakan on 4/27/2015.
  */
 @Document(collection = "tweets", language = "turkish")
-// bunsuz da yap�labilirdi fakat o zaman s�n�f ismi Tweets yaz�lmal�yd�!
 public class Tweet {
 
     @Id
-    private String _id; // bizim durumumuzda id tweet i�lerinde girildi�i i�in dok�mana ait tekil id'yi hem @Id hemde _id olarak belirterek girmeliyiz.
+    private String _id;
     private User user;
     private Media extended_entities;
 
@@ -20,16 +19,9 @@ public class Tweet {
     private int retweet_count;
     private int favorite_count;
 
-    // @Language bu �zelli�i tweets koleksiyonunda MongoDB nin desteklemedi�i diller de
-    // mevcut oldu�u i�in bunu kullanamad�k, language override �zeli�ini burada kullanmak i�in
-    // varsay�lan olarak ingilizce ayarland�.
-    private String lang;
-
-    // tabi bunun varsay�lan dili ingilizcedir siz bunu
-    // db.tweets.createIndex({"text": "text"},{default_language: "tr" | "turkish" }) yap�labilir.
     @TextIndexed
-    private String text; // mongo shell'de ya da spring mongodb kullanmadanda anotasyon yard�m�yla text indexleme yap�labilir.
-
+    private String text;
+    private String lang;
     private String source;
     private String id_str;
     private String created_at;

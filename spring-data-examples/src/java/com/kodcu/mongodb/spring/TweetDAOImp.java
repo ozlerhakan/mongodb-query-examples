@@ -113,10 +113,6 @@ class TweetDAOImp implements TweetDAO {
                                             .matchingAny(text);
         Query query = TextQuery.queryText(criteria);
         return mongos.count(query, Tweet.class);
-        // tweets koleksiyonumuzda language alan�na sahip olmad��� i�in ya da biz her ne kadar language_override alan�n� lang alan� olarak yapsak da
-        // koleksiyon i�erisinde baz� lang de�erleri mongoDB 'de desteklenmiyor bu  nedenlerden dolay�
-        // biz ne kadar t�rk�eye ayarlasakta indeksimizi varsay�lan olarak ingilizce dikkate al�nacak
-        // her türlü özgürlüğü mongodb tarafında sizlere sunacaklar
     }
 
     public void getCollectionIndexDetails() {
