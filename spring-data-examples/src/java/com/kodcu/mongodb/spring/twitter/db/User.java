@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 class User {
 
     private Integer id;
-    private Entity entities;
+    private UserEntity entities;
     private Integer utc_offset;
     private Object profile_location;
 
@@ -92,11 +92,11 @@ class User {
         this.description = description;
     }
 
-    public Entity getEntities() {
+    public UserEntity getEntities() {
         return entities;
     }
 
-    public void setEntities(Entity entities) {
+    public void setEntities(UserEntity entities) {
         this.entities = entities;
     }
 

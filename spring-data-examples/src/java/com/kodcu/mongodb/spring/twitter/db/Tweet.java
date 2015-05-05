@@ -14,6 +14,7 @@ public class Tweet {
     private String _id;
     private User user;
     private Media extended_entities;
+    private TweetEntity entities;
 
     private long id;
     private int retweet_count;
@@ -238,34 +239,44 @@ public class Tweet {
         this.user = user;
     }
 
+    public TweetEntity getEntities() {
+        return entities;
+    }
+
+    public Tweet setEntities(TweetEntity entities) {
+        this.entities = entities;
+        return this;
+    }
+
     @Override
     public String toString() {
         return "Tweet{" +
                 "_id='" + _id + '\'' +
-                ", created_at='" + created_at + '\'' +
-                ", id=" + id +
-                ", id_str='" + id_str + '\'' +
-                ", text='" + text + '\'' +
-                ", source='" + source + '\'' +
-                ", truncated=" + truncated +
-                ", in_reply_to_status_id=" + in_reply_to_status_id +
-                ", in_reply_to_status_id_str=" + in_reply_to_status_id_str +
-                ", in_reply_to_user_id=" + in_reply_to_user_id +
-                ", in_reply_to_user_id_str=" + in_reply_to_user_id_str +
-                ", in_reply_to_screen_name=" + in_reply_to_screen_name +
                 ", user=" + user +
-                ", geo=" + geo +
-                ", coodinates=" + coordinates +
-                ", place=" + place +
-                ", contributors=" + contributors +
+                ", extended_entities=" + extended_entities +
+                ", entities=" + entities +
+                ", id=" + id +
                 ", retweet_count=" + retweet_count +
                 ", favorite_count=" + favorite_count +
-                ", extended_entities=" + extended_entities +
+                ", text='" + text + '\'' +
+                ", lang='" + lang + '\'' +
+                ", source='" + source + '\'' +
+                ", id_str='" + id_str + '\'' +
+                ", created_at='" + created_at + '\'' +
+                ", truncated=" + truncated +
                 ", favorited=" + favorited +
                 ", retweeted=" + retweeted +
                 ", possibly_sensitive=" + possibly_sensitive +
                 ", possibly_sensitive_appealable=" + possibly_sensitive_appealable +
-                ", lang='" + lang + '\'' +
+                ", geo=" + geo +
+                ", place=" + place +
+                ", coordinates=" + coordinates +
+                ", contributors=" + contributors +
+                ", in_reply_to_user_id=" + in_reply_to_user_id +
+                ", in_reply_to_status_id=" + in_reply_to_status_id +
+                ", in_reply_to_user_id_str=" + in_reply_to_user_id_str +
+                ", in_reply_to_screen_name=" + in_reply_to_screen_name +
+                ", in_reply_to_status_id_str=" + in_reply_to_status_id_str +
                 '}';
     }
 }

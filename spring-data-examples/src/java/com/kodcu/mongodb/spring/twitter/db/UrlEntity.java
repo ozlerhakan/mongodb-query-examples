@@ -3,13 +3,13 @@ package com.kodcu.mongodb.spring.twitter.db;
 import java.util.Arrays;
 
 /**
- * Created by Hakan on 4/27/2015.
+ * Created by Hakan on 5/5/2015.
  */
-class UrlProperty {
+class URLEntity {
 
-    private String display_url;
     private int[] indices;
     private String url;
+    private String display_url;
     private String expanded_url;
 
     public String getUrl() {
@@ -46,7 +46,7 @@ class UrlProperty {
 
     @Override
     public String toString() {
-        return "UrlComponent{" +
+        return "UrlEntity{" +
                 "display_url='" + display_url + '\'' +
                 ", indices=" + Arrays.toString(indices) +
                 ", url='" + url + '\'' +
@@ -54,3 +54,4 @@ class UrlProperty {
                 '}';
     }
 }
+
