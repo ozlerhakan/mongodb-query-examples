@@ -59,7 +59,7 @@ mongodb-query-examples
 +
     $ mongorestore dump
 +
-If your mongod server runs on a different port, use `--port` command before dump. See the other details of http://docs.mongodb.org/manual/reference/program/mongorestore/#mongorestore[mongorestore]. This command should restore to a collection called "tweets" in a database called "twitter".
+If your mongod server runs on a different port, use `--port` command before dump. See the other details of http://docs.mongodb.org/manual/reference/program/mongorestore/#mongorestore[mongorestore]. This command should restore to a collection called "tweets" in a database called "twitter". Here is a gist that shows an https://gist.github.com/ozlerhakan/9a84daa89959f04880b9#file-tweet[example tweet] document.
 
 . To check out the projects and build from sources, do the following:
 
