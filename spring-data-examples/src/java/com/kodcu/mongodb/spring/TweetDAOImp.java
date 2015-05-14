@@ -110,7 +110,7 @@ class TweetDAOImp implements TweetDAO {
 
     public long countTweetsByTextSearch(String text) {
         TextCriteria criteria = TextCriteria.forDefaultLanguage()
-                                            .matchingAny(text);
+                                            .matching(text);
         Query query = TextQuery.queryText(criteria);
         return mongos.count(query, Tweet.class);
     }
