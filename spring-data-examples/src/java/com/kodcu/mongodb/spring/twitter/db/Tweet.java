@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Tweet {
 
     @Id
-    private String _id;
+    private String tid;
     private User user;
     private Media extended_entities;
     private TweetEntity entities;
@@ -43,8 +43,8 @@ public class Tweet {
     private Object in_reply_to_screen_name;
     private Object in_reply_to_status_id_str;
 
-    public String get_id() {
-        return _id;
+    public String getTid() {
+        return tid;
     }
 
     public Object getContributors() {
@@ -251,7 +251,7 @@ public class Tweet {
     @Override
     public String toString() {
         return "Tweet{" +
-                "_id='" + _id + '\'' +
+                "_id='" + tid + '\'' +
                 ", user=" + user +
                 ", extended_entities=" + extended_entities +
                 ", entities=" + entities +
