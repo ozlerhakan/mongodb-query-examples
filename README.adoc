@@ -40,15 +40,13 @@ mongodb-query-examples
                      |--TweetDAOImp.java
                      `--twitter
                         `--db
-                           |--Description.java
-                           |--Entity.java
                            |--Media.java
                            |--MediaProperty.java
-                           |--Size.java
                            |--Tweet.java
-                           |--Url.java
-                           |--UrlProperty.java
-                           `--User.java
+                           |--TweetEntity.java
+                           |--URLEntity.java
+                           |--User.java
+                           `--UserEntity.java
 ----
 
 === How to run
