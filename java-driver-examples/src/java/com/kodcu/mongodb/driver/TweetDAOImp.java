@@ -79,9 +79,10 @@ class TweetDAOImp implements TweetDAO {
         pipeline = asList(new Document("$match", new Document("user.followers_count", new Document("$gte", followersCount))),
                           new Document("$group", new Document("_id", new Document("id", "$user.id").append("name", "$user.name"))
                                                       .append("tweets", new Document("$sum", 1))),
-                          new Document("$project", new Document("_id", new Document("name", "$_id.name"))
-                                                       .append("total", "$tweets")),
-                          new Document("$sort", new Document("_id.name", 1)));
+                          new Document("$project", new Document("_id","$_id.id")
+                                                        .append("name", "$_id.name")
+                                                        .append("total", "$tweets")),
+                          new Document("$sort", new Document("name", 1)));
         List<Document> list = tweets.aggregate(pipeline).into(new ArrayList<>());
         return list;
     }
