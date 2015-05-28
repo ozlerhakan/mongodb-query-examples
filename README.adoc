@@ -1,8 +1,15 @@
 == Query Examples
 
-This project is composed of 2 sub modules. These sub projects namely "java-driver-examples" and "spring-data-examples" work as 2 different ways in order to obtain the results of the specific queries with regard to a collection stored in MongoDB (mongod). While the first one uses only MongoDB Java Driver to retrieve the data, other one makes use of the Spring MongoDB approach for the same purpose.
+This project is composed of 3 sub modules. These sub projects namely "java-driver-examples", "spring-data-repo-examples" and "spring-data-examples" work as 3 different ways in order to obtain the results of the specific queries with regard to a collection stored in MongoDB (mongod). While the first one uses only MongoDB Java Driver to retrieve the data, others make use of the Spring MongoDB approach for the same purpose.
 
-=== What's included:
+=== Related Articles
+
+*Turkish*:
+
+. http://kodcu.com/2015/05/spring-data-mongodb-ve-mongodb-java-driver-kullanarak-sorgular-olusturma/[Spring Data MongoDB ve MongoDB Java Driver Kullanarak Sorgu Oluþturma]
+
+
+=== What's included
 
 [source,xml]
 ----
@@ -26,7 +33,29 @@ mongodb-query-examples
 |                    |--TweetDAO.java
 |                    `--TweetDAOImp.java
 |--settings.gradle
-`--spring-data-examples
+|--spring-data-examples
+|   |--build.gradle
+|   `--src
+|      `--java
+|         `--com
+|            `--kodcu
+|               `--mongodb
+|                  `--spring
+|                     |--MongoApp.java
+|                     |--MongoConfiguration.java
+|                     |--MongoConfigurationBeans.java
+|                     |--TweetDAO.java
+|                     |--TweetDAOImp.java
+|                     `--twitter
+|                        `--db
+|                           |--Media.java
+|                           |--MediaProperty.java
+|                           |--Tweet.java
+|                           |--TweetEntity.java
+|                           |--URLEntity.java
+|                           |--User.java
+|                           `--UserEntity.java
+`--spring-data-repo-examples
    |--build.gradle
    `--src
       `--java
@@ -36,17 +65,19 @@ mongodb-query-examples
                   `--spring
                      |--MongoApp.java
                      |--MongoConfiguration.java
-                     |--TweetDAO.java
-                     |--TweetDAOImp.java
                      `--twitter
-                        `--db
-                           |--Media.java
-                           |--MediaProperty.java
-                           |--Tweet.java
-                           |--TweetEntity.java
-                           |--URLEntity.java
-                           |--User.java
-                           `--UserEntity.java
+                        |--db
+                        |  |--Media.java
+                        |  |--MediaProperty.java
+                        |  |--Tweet.java
+                        |  |--TweetEntity.java
+                        |  |--URLEntity.java
+                        |  |--User.java
+                        |  `--UserEntity.java
+                        `--repo
+                           |--TweetDAO.java
+                           |--TweetRepository.java
+                           `--TweetRepositoryDAO.java
 ----
 
 === How to run
@@ -69,7 +100,7 @@ If your mongod server runs on a different port, use `--port` command before dump
 
 	./gradlew run
 +
-This command runs both "java-driver-examples" and "spring-data-examples" respectively. Note that, the database (`twitter`) is running on the local interface on port 27017.
+This command runs "java-driver-examples", "spring-data-examples" and "spring-data-repo-examples" respectively. Note that, the database (`twitter`) is running on the local interface on port 27017.
 
 ==== Using Eclipse
 
