@@ -1,4 +1,5 @@
 rootProject.name = 'mongodb-query-examples'
 include 'java-driver-examples'
 include 'spring-data-examples'
+include 'spring-data-repo-examples'
 
